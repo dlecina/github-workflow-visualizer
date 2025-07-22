@@ -1,0 +1,5 @@
+- Support if (step)
+- Support if (job)
+- Show legend
+- Terminate blocks (start / end)
+- Support CD

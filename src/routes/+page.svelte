@@ -1,2 +1,21 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+    import YamlTextarea from "$lib/YamlTextarea.svelte";
+    import Workflow from "$lib/Workflow.svelte";
+
+    let yamlTextarea = $state();
+    let workflow = $derived(yamlTextarea && yamlTextarea.getWorkflow());
+</script>
+
+<h1>GitHub Actions Workflow Diagram Maker</h1>
+
+<YamlTextarea bind:this={yamlTextarea} />
+
+<Workflow {workflow} />
+
+<style>
+    :global {
+        * {
+            font-family: Aptos, Arial, sans-serif;
+        }
+    }
+</style>

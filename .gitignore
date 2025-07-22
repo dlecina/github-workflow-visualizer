@@ -21,3 +21,7 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Temp
+datalake-module-library-main-branch.yml
+golang-library-pull-request.yml
