@@ -91,6 +91,7 @@
         padding: 10px 10px 10px 20px;
         color: white;
         background-color: var(--c);
+        text-shadow: 1px 1px 3px black;
     }
 
     .optional li {
