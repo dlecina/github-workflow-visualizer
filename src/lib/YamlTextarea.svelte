@@ -33,7 +33,7 @@
 <style>
     textarea {
         width: 100%;
-        height: 400px;
+        height: 30vh;
         font-family: monospace;
         resize: vertical;
         background: #212121;

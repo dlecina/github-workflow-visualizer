@@ -1,6 +1,7 @@
 <script>
     import Job from "./Job.svelte";
     import Step from "./Step.svelte";
+    import Legend from "./Legend.svelte";
 
     import github_logo from "$lib/assets/github.png";
 
@@ -12,7 +13,8 @@
         name: "Deployment",
     };
 
-    let { workflow = {} } = $props();
+    let { workflow = {}, showLegend = true } = $props();
+
     let jobs = $derived(workflow.jobs || null);
 </script>
 
@@ -26,6 +28,9 @@
             {#each Object.entries(jobs) as [name, job]}
                 <Job {name} {job} />
             {/each}
+            {#if showLegend}
+                <Legend />
+            {/if}
         </div>
         <div class="afterWorkflow">
             <Step step={deploymentStep}></Step>
