@@ -113,9 +113,9 @@
         height: 0;
         left: 0;
         margin: -10px 0px 0 0px;
-        border-top: 1.1rem solid transparent;
+        border-top: 1.3rem solid transparent;
         border-left: 10px solid white;
-        border-bottom: 1.1rem solid transparent;
+        border-bottom: 1.15rem solid transparent;
     }
 
     li.first:before {
@@ -128,9 +128,9 @@
         width: 0;
         height: 0;
         margin: -10px 90px 0 10px;
-        border-top: 1.1rem solid transparent;
+        border-top: 1.3rem solid transparent;
         border-left: 10px solid var(--c);
-        border-bottom: 1.1rem solid transparent;
+        border-bottom: 1.15rem solid transparent;
     }
 
     li.last:after {
