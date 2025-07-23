@@ -1,3 +1,9 @@
+# GitHub Actions Workflow Visualizer
+
+This is a tool to generate a visualization of the steps in a GitHub Actions Workflow from their YAML file, which can be used to document them.
+
+There will be no support for this tool, as it is intended for my specific use case. Feel free to fork it, however.
+
 # sv
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).

@@ -2,8 +2,6 @@
     import * as yaml from "js-yaml";
 
     import exampleYaml from "./example.yaml?raw";
-    // import exampleYaml from "./datalake-module-library-main-branch.yml?raw";
-    // import exampleYaml from "./golang-library-pull-request.yml?raw";
 
     let yamlstr = $state(exampleYaml);
     let workflow = $derived.by(() => {
