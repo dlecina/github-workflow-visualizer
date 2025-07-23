@@ -54,7 +54,7 @@
     });
 </script>
 
-<div class={["container", { optional }]}>
+<div class={["step", { optional }]}>
     {#if optional}
         <p class="if">if {condition}</p>
     {/if}
@@ -69,7 +69,7 @@
 </div>
 
 <style>
-    .container {
+    .step {
         display: inline-block;
         padding: 0.4em 0;
         margin-left: 4px;
@@ -115,7 +115,7 @@
         margin: -10px 0px 0 0px;
         border-top: 1.3rem solid transparent;
         border-left: 10px solid white;
-        border-bottom: 1.15rem solid transparent;
+        border-bottom: 1.2rem solid transparent;
     }
 
     li.first:before {
@@ -130,7 +130,7 @@
         margin: -10px 90px 0 10px;
         border-top: 1.3rem solid transparent;
         border-left: 10px solid var(--c);
-        border-bottom: 1.15rem solid transparent;
+        border-bottom: 1.2rem solid transparent;
     }
 
     li.last:after {

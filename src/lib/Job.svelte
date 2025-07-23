@@ -17,16 +17,16 @@
         <img alt="GitHub Actions logo" src={github_actions_logo} class="github_actions_logo" />
     </div>
 
-    <h3>{name}</h3>
+    <h3 class="text-xl mt-2 mb-4">{name}</h3>
 
-    <ol id="steps">
+    <ol id="steps" class="mb-2">
         {#each job.steps as step, index}
             <Step {step} {index} />
         {/each}
     </ol>
 
     {#if job.uses}
-        <p class="uses">📄 {job.uses}</p>
+        <p class="uses text-xs mb-2">📄 {job.uses}</p>
     {/if}
 </div>
 
@@ -43,7 +43,6 @@
 
     h3 {
         text-align: center;
-        margin-block-start: 0.5em;
     }
 
     ol {
@@ -51,7 +50,6 @@
     }
 
     .uses {
-        font-size: 0.8em;
         text-align: center;
     }
 

@@ -43,6 +43,7 @@
         display: flex;
         align-items: center;
         justify-items: center;
+        justify-self: center;
         max-width: 1200px;
     }
 
@@ -54,7 +55,7 @@
     .beforeWorkflow,
     .afterWorkflow {
         flex-grow: 0;
-        min-width: 130px;
+        min-width: 150px;
         padding: 1em;
     }
 

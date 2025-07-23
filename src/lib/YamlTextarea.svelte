@@ -21,11 +21,11 @@
 
 <div class="container-flex">
     <div class="column-flex">
-        <h2>YAML</h2>
+        <h2 class="prose text-xl mb-2">YAML</h2>
         <textarea bind:value={yamlstr} placeholder="Enter YAML here..."></textarea>
     </div>
     <div class="column-flex">
-        <h2>JSON</h2>
+        <h2 class="prose text-xl mb-2">JSON</h2>
         <textarea readonly value={JSON.stringify(workflow, null, 2)} placeholder="Converted JSON"></textarea>
     </div>
 </div>
@@ -35,6 +35,7 @@
         width: 100%;
         height: 30vh;
         font-family: monospace;
+        font-size: 12px;
         resize: vertical;
         background: #212121;
         color: #f1f1f1;

@@ -6,11 +6,15 @@
     let workflow = $derived(yamlTextarea && yamlTextarea.getWorkflow());
 </script>
 
-<h1>GitHub Actions Workflow Visualizer</h1>
+<div class="m-4">
+    <h1 class="prose text-4xl mb-4">GitHub Actions Workflow Visualizer</h1>
 
-<YamlTextarea bind:this={yamlTextarea} />
+    <YamlTextarea bind:this={yamlTextarea} />
 
-<Workflow {workflow} />
+    <hr class="mt-4 mb-4" />
+
+    <Workflow {workflow} />
+</div>
 
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
@@ -18,6 +22,10 @@
     :global {
         * {
             font-family: "Open Sans", Arial, sans-serif;
+        }
+
+        hr {
+            color: darkgrey;
         }
     }
 </style>
