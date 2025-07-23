@@ -6,7 +6,7 @@
     let workflow = $derived(yamlTextarea && yamlTextarea.getWorkflow());
 </script>
 
-<h1>GitHub Actions Workflow Diagram Maker</h1>
+<h1>GitHub Actions Workflow Visualizer</h1>
 
 <YamlTextarea bind:this={yamlTextarea} />
 
