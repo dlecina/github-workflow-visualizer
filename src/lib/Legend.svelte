@@ -7,7 +7,7 @@
         "Static Code Analysis": colors.sonar,
         "Security Analysis": colors.security,
         Testing: colors.test,
-        "Artifact Publication": colors.publish,
+        "Artifact Repository": colors.publish,
         "AWS Activity": colors.aws,
         Deployment: colors.deployment,
     };
