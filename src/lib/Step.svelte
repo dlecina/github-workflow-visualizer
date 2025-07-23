@@ -1,7 +1,7 @@
 <script>
     import { colors } from "./colors.svelte";
 
-    let { step, index = null, showCondition = true } = $props();
+    let { step, index = null, first = false, last = false, showCondition = true } = $props();
 
     let condition = $derived.by(() => {
         let i = step.if;
@@ -58,7 +58,7 @@
     {#if optional}
         <p class="if">if {condition}</p>
     {/if}
-    <li style="--c: {color}">
+    <li class={[{ first }, { last }]} style="--c: {color}">
         {#if index != null}
             <div class="indexCircle">
                 <span class="index">{index + 1}</span>
@@ -94,6 +94,14 @@
         text-shadow: 1px 1px 3px black;
     }
 
+    li.first {
+        padding-left: 1em;
+    }
+
+    li.last {
+        padding-right: 1em;
+    }
+
     .optional li {
         margin-right: 0.4em;
     }
@@ -110,6 +118,10 @@
         border-bottom: 1.1rem solid transparent;
     }
 
+    li.first:before {
+        display: none;
+    }
+
     li:after {
         content: "";
         position: absolute;
@@ -119,6 +131,10 @@
         border-top: 1.1rem solid transparent;
         border-left: 10px solid var(--c);
         border-bottom: 1.1rem solid transparent;
+    }
+
+    li.last:after {
+        display: none;
     }
 
     .indexCircle {

@@ -21,7 +21,7 @@
 {#if jobs}
     <div class="grid">
         <div class="beforeWorkflow">
-            <Step step={codeCommitStep}></Step>
+            <Step step={codeCommitStep} first></Step>
             <img alt="GitHub logo" src={github_logo} class="github_logo" />
         </div>
         <div class="workflow">
@@ -33,7 +33,7 @@
             {/if}
         </div>
         <div class="afterWorkflow">
-            <Step step={deploymentStep}></Step>
+            <Step step={deploymentStep} last></Step>
         </div>
     </div>
 {/if}
