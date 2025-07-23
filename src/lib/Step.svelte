@@ -1,5 +1,6 @@
 <script>
     import { colors } from "./colors.svelte";
+    import github_logo from "$lib/assets/github.png";
 
     let { step, index = null, first = false, last = false, showCondition = true } = $props();
 
@@ -54,18 +55,23 @@
     });
 </script>
 
-<div class={["step", { optional }]}>
+<div class="step">
     {#if optional}
         <p class="if">if {condition}</p>
     {/if}
-    <li class={[{ first }, { last }]} style="--c: {color}">
-        {#if index != null}
-            <div class="indexCircle">
-                <span class="index">{index + 1}</span>
-            </div>
+    <div class={[{ optional }]}>
+        <li class={["text-nowrap", { first }, { last }]} style="--c: {color}">
+            {#if index != null}
+                <div class="indexCircle">
+                    <span class="index">{index + 1}</span>
+                </div>
+            {/if}
+            {step.name || step.uses}
+        </li>
+        {#if first && color == colors.git}
+            <img alt="GitHub logo" src={github_logo} class="github_logo" />
         {/if}
-        {step.name || step.uses}
-    </li>
+    </div>
 </div>
 
 <style>
@@ -73,13 +79,18 @@
         display: inline-block;
         padding: 0.4em 0;
         margin-left: 4px;
-        margin-right: 8px;
+    }
+
+    .step:not(:first-child) {
+        margin-left: 12px;
     }
 
     .optional {
         border: 1px dashed darkgrey;
         margin-top: 4px;
         margin-bottom: 4px;
+        padding-top: 0.8em;
+        padding-bottom: 0.4em;
         padding-left: 0.6em;
         padding-right: 0.6em;
     }
@@ -163,6 +174,12 @@
 
     .if {
         font-size: 0.6em;
-        margin: 0 0 1.1em 0;
+        margin: 0 0 -0.3em 0;
+    }
+
+    .github_logo {
+        display: block;
+        margin: 0.3em auto;
+        height: 1.2em;
     }
 </style>

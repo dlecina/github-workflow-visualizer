@@ -3,27 +3,18 @@
     import Step from "./Step.svelte";
     import Legend from "./Legend.svelte";
 
-    import github_logo from "$lib/assets/github.png";
-
-    const codeCommitStep = {
-        name: "Code Commit",
-    };
-
-    const deploymentStep = {
-        name: "Deployment",
-    };
-
-    let { workflow = {}, showLegend = true } = $props();
+    let { workflow = {}, showLegend = true, options = {} } = $props();
 
     let jobs = $derived(workflow.jobs || null);
 </script>
 
 {#if jobs}
     <div class="grid">
-        <div class="beforeWorkflow">
-            <Step step={codeCommitStep} first></Step>
-            <img alt="GitHub logo" src={github_logo} class="github_logo" />
-        </div>
+        {#if options.firstStep}
+            <div class="beforeWorkflow">
+                <Step step={options.firstStep} first></Step>
+            </div>
+        {/if}
         <div class="workflow">
             {#each Object.entries(jobs) as [name, job]}
                 <Job {name} {job} />
@@ -32,9 +23,11 @@
                 <Legend />
             {/if}
         </div>
-        <div class="afterWorkflow">
-            <Step step={deploymentStep} last></Step>
-        </div>
+        {#if options.lastStep}
+            <div class="afterWorkflow">
+                <Step step={options.lastStep} last></Step>
+            </div>
+        {/if}
     </div>
 {/if}
 
@@ -65,11 +58,5 @@
 
     .afterWorkflow {
         grid-column: 3;
-    }
-
-    .github_logo {
-        display: block;
-        margin: 0.3em auto;
-        height: 1.2em;
     }
 </style>

@@ -8,16 +8,15 @@
     let optional = $derived(showCondition && job.if && !job.if.includes("always()"));
 </script>
 
+{#if optional}
+    <p class="if">if {job.if}</p>
+{/if}
 <div class={["job", { optional }]}>
-    {#if optional}
-        <p class="if">if {job.if}</p>
-    {/if}
-
     <div class="github_actions_logo_container">
         <img alt="GitHub Actions logo" src={github_actions_logo} class="github_actions_logo" />
     </div>
 
-    <h3 class="text-xl mt-2 mb-4">{name}</h3>
+    <h3 class="text-xl mt-1 mb-4">{name}</h3>
 
     <ol id="steps" class="mb-2">
         {#each job.steps as step, index}
@@ -59,16 +58,13 @@
 
     .github_actions_logo {
         position: absolute;
-        top: 0.8em;
+        top: 0.4em;
+        left: 0;
         height: 1.2em;
-    }
-
-    .optional .github_actions_logo {
-        top: 0;
     }
 
     .if {
         font-size: 0.6em;
-        margin: 1em 0 1.1em 0;
+        margin: 0 0 -1.5em 0;
     }
 </style>

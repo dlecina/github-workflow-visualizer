@@ -1,9 +1,13 @@
 <script>
     import YamlTextarea from "$lib/YamlTextarea.svelte";
     import Workflow from "$lib/Workflow.svelte";
+    import Options from "$lib/Options.svelte";
 
     let yamlTextarea = $state();
+    let optionsComponent = $state();
+
     let workflow = $derived(yamlTextarea && yamlTextarea.getWorkflow());
+    let options = $derived(optionsComponent && optionsComponent.getOptions());
 </script>
 
 <div class="m-4">
@@ -13,7 +17,11 @@
 
     <hr class="mt-4 mb-4" />
 
-    <Workflow {workflow} />
+    <Options bind:this={optionsComponent} />
+
+    <hr class="mt-4 mb-4" />
+
+    <Workflow {workflow} {options} />
 </div>
 
 <style>
