@@ -86,7 +86,7 @@
     }
 
     .optional {
-        border: 1px dashed darkgray;
+        border: 1px dashed darkgrey;
         margin-top: 4px;
         margin-bottom: 4px;
         padding-left: 0.6em;

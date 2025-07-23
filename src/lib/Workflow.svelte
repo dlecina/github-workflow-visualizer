@@ -1,5 +1,5 @@
 <script>
-    import Job from "$lib/Job.svelte";
+    import Job from "./Job.svelte";
     import Step from "./Step.svelte";
 
     import github_logo from "$lib/assets/github.png";
