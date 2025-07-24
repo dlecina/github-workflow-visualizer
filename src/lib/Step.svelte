@@ -31,6 +31,7 @@
             Commit: colors.git,
             Git: colors.git,
             Checkout: colors.git,
+            "Check out": colors.git,
             Sonar: colors.sonar,
             Security: colors.security,
             Test: colors.test,
